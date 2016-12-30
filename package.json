@@ -1,0 +1,27 @@
+{
+  "name": "flyd-giphy",
+  "description": "An experiment using Flyd + Giphy + Service Workers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewdelprete/flyd-giphy.git"
+  },
+  "license": "MIT",
+  "author": "Andrew Del Prete",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --config='webpack.config.js' --inline --hot",
+    "deploy": "webpack && surge build flyd-giphy.surge.sh"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-core": "6.21.0",
+    "babel-loader": "6.2.10",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "file-loader": "0.9.0",
+    "flyd": "^0.2.2",
+    "offline-plugin": "^4.5.3",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.10"
+  }
+}
