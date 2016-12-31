@@ -3,7 +3,9 @@ import filter from 'flyd/module/filter'
 import afterSilence from 'flyd/module/aftersilence'
 
 import './index.html'
-import giphyLogo from './PoweredBy_640_Horizontal_Light-Backgrounds_With_Logo.gif'
+import './PoweredBy_640_Horizontal_Light-Backgrounds_With_Logo.gif'
+import './favicon-16x16.png'
+import './favicon-32x32.png'
 
 require('offline-plugin/runtime').install()
 import './manifest.json'
