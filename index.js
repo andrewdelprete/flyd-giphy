@@ -52,7 +52,6 @@ if (navigator.onLine) {
     if (results.length > 0) {
       return resultList.innerHTML = results
         .reduce((html, current) => {
-
           const gif = `
             <a
               class='gif'
@@ -68,12 +67,10 @@ if (navigator.onLine) {
   }
 
   // Fetch results with giphy and return a promise
-  function fetchGifs(text) {
-    return fetch(`https://api.giphy.com/v1/gifs/search?q=${ text }&api_key=dc6zaTOxFJmzC`)
-      .then((response) => {
-        return response.json()
-      })
-  }
+  const fetchGifs = text => (
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${ text }&api_key=dc6zaTOxFJmzC`)
+      .then(response => response.json())
+  )
 
 // Show offline things
 } else {
