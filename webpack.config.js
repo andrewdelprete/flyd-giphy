@@ -13,7 +13,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
     new OfflinePlugin({
-      externals: ['https://fonts.gstatic.com/s/bungee/v2/kJ_ur5UPA1FPpr5xGCMYqevvDin1pK8aKteLpeZ5c0A.woff2']
+      externals: [
+        'https://fonts.gstatic.com/s/bungee/v2/kJ_ur5UPA1FPpr5xGCMYqevvDin1pK8aKteLpeZ5c0A.woff2'
+      ]
     })
   ],
   devtool: "cheap-source-map",
@@ -29,6 +31,10 @@ module.exports = {
       }, {
         test: /\.js$/,
         loaders: ['babel']
+      },
+      {
+        test: /manifest.json$/,
+        loader: 'file-loader?name=manifest.json!web-app-manifest-loader'
       }
     ]
   }

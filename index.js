@@ -1,12 +1,12 @@
-require('offline-plugin/runtime').install()
+import flyd from 'flyd'
+import filter from 'flyd/module/filter'
+import afterSilence from 'flyd/module/aftersilence'
 
 import './index.html'
 import giphyLogo from './PoweredBy_640_Horizontal_Light-Backgrounds_With_Logo.gif'
 
-import flyd from 'flyd'
-import filter from 'flyd/module/filter'
-import afterSilence from 'flyd/module/aftersilence'
-import axios from 'axios'
+require('offline-plugin/runtime').install()
+import './manifest.json'
 
 // Elements
 const search = document.getElementById('search')
@@ -42,7 +42,7 @@ if (navigator.onLine) {
 
   // Render
   function render(response) {
-    const results = response.data.data
+    const results = response.data
 
     if (results.length > 0) {
       return resultList.innerHTML = results
@@ -64,11 +64,15 @@ if (navigator.onLine) {
 
   // Fetch results with giphy and return a promise
   function fetchGifs(text) {
-    return axios.get(`https://api.giphy.com/v1/gifs/search?q=${ text }&api_key=dc6zaTOxFJmzC`)
+    return fetch(`https://api.giphy.com/v1/gifs/search?q=${ text }&api_key=dc6zaTOxFJmzC`)
+      .then((response) => {
+        return response.json()
+      })
   }
 
 // Show offline things
 } else {
+  document.getElementById('powered-by-giphy').style.display = "none";
   search.value = "Check your internet wires."
   search.disabled = true
 }
