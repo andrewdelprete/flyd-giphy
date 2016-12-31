@@ -23,6 +23,7 @@
     "offline-plugin": "^4.5.3",
     "web-app-manifest-loader": "^0.1.1",
     "webpack": "2.1.0-beta.25",
-    "webpack-dev-server": "2.1.0-beta.10"
+    "webpack-dev-server": "2.1.0-beta.10",
+    "whatwg-fetch": "^2.0.1"
   }
 }

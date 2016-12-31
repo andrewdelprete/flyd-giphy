@@ -1,6 +1,7 @@
 import flyd from 'flyd'
 import filter from 'flyd/module/filter'
 import afterSilence from 'flyd/module/aftersilence'
+import 'whatwg-fetch'
 
 import './index.html'
 import './PoweredBy_640_Horizontal_Light-Backgrounds_With_Logo.gif'
